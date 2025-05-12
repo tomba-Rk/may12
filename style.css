@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --nav-bg: #333;
+    --nav-text: #fff;
+    --accent: #f90;
+  }
+  
+  /* Reset & box-sizing */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins;
+  }
+  
+  /* NAVBAR BASE */
+  .navbar {
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    position: relative;
+    padding-left: 3rem;
+    padding-right: 13rem;
+  }
+  
+  /* LOGO */
+  .logo {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  /* NAV MENU (hidden by default on mobile) */
+  .nav-menu {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    padding: 1rem 0;
+  }
+  .nav-menu li a {
+    color: var(--nav-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  
+  /* HAMBURGER VISIBLE ON MOBILE */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--nav-text);
+    transition: transform 0.3s;
+  }
+  
+  /* WHEN MENU IS ACTIVE (via JS) */
+  .nav-menu.active {
+    display: flex;
+  }
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 0 2rem;
+    background: green;
+    position: relative;
+  }
+  
+  .hero-content {
+    position: relative;    /* bring above overlay */
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  /* # get-started, */
+  .btn-primary {
+    background: var(--accent);
+    border: none;
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+  
+  
+  /* LARGE SCREENS: show menu inline, hide hamburger */
+  @media (min-width: 768px) {
+    .hamburger {
+      display: none;
+    }
+    .nav-menu {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      width: auto;
+      background: none;
+      padding: 0;
+    }
+  }
+  
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
